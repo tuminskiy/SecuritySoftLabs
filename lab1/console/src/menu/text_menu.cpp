@@ -1,10 +1,9 @@
-#include "text_menu.hpp"
-#include "error_menu.hpp"
+#include "menu/text_menu.hpp"
+#include "menu/error_menu.hpp"
 #include "filemanager.hpp"
 
 #include <iostream>
 #include <iomanip>
-#include <utility>
 
 namespace security_soft {
 
@@ -20,27 +19,24 @@ text_menu::text_menu(menu_sptr parent) : base_menu({
 }, std::move(parent)) {}
 
 menu_sptr text_menu::process() {
-  const char c = choose();
+  auto self = shared_from_this();
+  menu_sptr next_menu = self;
 
-  menu_sptr next_menu = shared_from_this();
-
-  switch (c) {
+  switch (choose()) {
     case '1': {
-      filemanager::create_file(get_filename());
+      filemanager::create_file(get_filename() + ".txt");
     } break;
 
     case '2': {
-      const std::string filename = get_filename();
-      const std::string text = input_text();
-      filemanager::write_to_file(filename, text);
+      filemanager::write_to_file(get_filename() + ".txt", input_text());
     } break;
 
     case '3': {
-      std::cout << filemanager::read_all(get_filename());
+      std::cout << filemanager::read_all(get_filename() + ".txt");
     } break;
 
     case '4': {
-      filemanager::delete_file(get_filename());
+      filemanager::delete_file(get_filename() + ".txt");
     } break;
 
     case '8': {
@@ -51,8 +47,9 @@ menu_sptr text_menu::process() {
       next_menu = nullptr;
     } break;
 
-    default:
-      next_menu = std::make_shared<error_menu>("Invalid choose"sv, shared_from_this());
+    default: {
+      next_menu = std::make_shared<error_menu>("Invalid choose"sv, self);
+    }
   };
 
   return next_menu;

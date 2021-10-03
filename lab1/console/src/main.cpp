@@ -1,12 +1,11 @@
 #include <iostream>
 #include <iterator>
 
-#include "main_menu.hpp"
+#include "menu/main_menu.hpp"
 
 int main() {
   using namespace security_soft;
 
-  char choose = '0';
   menu_sptr current_menu = std::make_shared<main_menu>();
 
   do {

@@ -12,23 +12,27 @@ set_target_properties(lab1 PROPERTIES
 )
 
 set(HEADERS
-  include/base_menu.hpp
-  include/error_menu.hpp
-  include/main_menu.hpp
-  include/text_menu.hpp
-  include/json_menu.hpp
-  include/xml_menu.hpp
-  include/zip_menu.hpp
+  include/menu/base_menu.hpp
+  include/menu/error_menu.hpp
+  include/menu/main_menu.hpp
+  include/menu/text_menu.hpp
+  include/menu/json_menu.hpp
+  include/menu/xml_menu.hpp
+  include/menu/zip_menu.hpp
+
+  include/pod/some_pod.hpp
 )
 
 set(SOURCES src/main.cpp
-  src/base_menu.cpp
-  src/error_menu.cpp
-  src/main_menu.cpp
-  src/text_menu.cpp
-  src/json_menu.cpp
-  src/xml_menu.cpp
-  src/zip_menu.cpp
+  src/menu/base_menu.cpp
+  src/menu/error_menu.cpp
+  src/menu/main_menu.cpp
+  src/menu/text_menu.cpp
+  src/menu/json_menu.cpp
+  src/menu/xml_menu.cpp
+  src/menu/zip_menu.cpp
+
+  src/pod/some_pod.cpp
 )
 
 
