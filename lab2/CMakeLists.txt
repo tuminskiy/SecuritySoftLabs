@@ -19,8 +19,8 @@ set(HEADERS include/ranges.hpp)
 
 set(SOURCES src/main.cpp)
 
+
 find_package(Qt6 COMPONENTS Core REQUIRED)
-find_package(Boost COMPONENTS system REQUIRED)
 
 
 target_include_directories(lab2 PRIVATE include)
