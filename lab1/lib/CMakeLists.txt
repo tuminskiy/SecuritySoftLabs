@@ -18,7 +18,6 @@ set_target_properties(filesinfo PROPERTIES
   LIBRARY_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/release/lib"
 )
 
-
 set(HEADERS
   include/logicdisk.hpp
   include/filemanager.hpp
