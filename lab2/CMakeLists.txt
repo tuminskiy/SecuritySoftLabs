@@ -15,9 +15,16 @@ set_target_properties(lab2 PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/release/bin"
 )
 
-set(HEADERS include/ranges.hpp)
+set(HEADERS
+  include/range_number.hpp
+  include/ns26.hpp
+  include/brute_force_task.hpp
+)
 
-set(SOURCES src/main.cpp)
+set(SOURCES src/main.cpp
+  src/ns26.cpp
+  src/brute_force_task.cpp
+)
 
 
 find_package(Qt6 COMPONENTS Core REQUIRED)

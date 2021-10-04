@@ -11,7 +11,7 @@ struct range_number {
 
 
 template <class OutputIt>
-constexpr OutputIt chunks(const range_number& rn, std::size_t n_chunk, OutputIt out_it) {
+constexpr OutputIt split_on_chunks(const range_number& rn, std::size_t n_chunk, OutputIt out_it) {
   const std::size_t numbers_in_range = rn.end - rn.start;
 
   const std::size_t min_chunk_size = numbers_in_range / n_chunk;
