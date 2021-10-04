@@ -19,15 +19,18 @@ set(HEADERS
   include/range_number.hpp
   include/ns26.hpp
   include/brute_force_task.hpp
+  include/threadpool.hpp
 )
 
 set(SOURCES src/main.cpp
   src/ns26.cpp
   src/brute_force_task.cpp
+  src/threadpool.cpp
 )
 
 
 find_package(Qt6 COMPONENTS Core REQUIRED)
+find_package(Boost COMPONENTS system REQUIRED)
 
 
 target_include_directories(lab2 PRIVATE include)

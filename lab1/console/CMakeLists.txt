@@ -11,6 +11,8 @@ set_target_properties(lab1 PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_BINARY_DIR}/release/bin"
 )
 
+target_compile_options(lab1 PRIVATE -fPIC)
+
 set(HEADERS
   include/menu/base_menu.hpp
   include/menu/error_menu.hpp
